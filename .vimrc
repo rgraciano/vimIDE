@@ -48,7 +48,8 @@ nmap <c-l> <c-w>l<c-w>
 
 " Custom bindings to do stuff easily
 nmap <leader>t :Tlist<CR>
-nmap <leader>f :NERDTreeToggle<CR>
+nmap <leader>f :CommandT<CR>
+nmap <leader>b :NERDTreeToggle<CR>
 
 
 " Create all swap files in one place
