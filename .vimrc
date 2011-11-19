@@ -8,6 +8,7 @@ call pathogen#infect()
 " Intuitive backspacing in insert mode
 set backspace=indent,eol,start
 set hidden
+set visualbell
  
 " File-type highlighting and configuration.
 " Run :filetype (without args) to see what you may have
