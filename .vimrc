@@ -9,6 +9,7 @@ call pathogen#infect()
 set backspace=indent,eol,start
 set hidden
 set visualbell
+set history=1000
  
 " File-type highlighting and configuration.
 " Run :filetype (without args) to see what you may have
