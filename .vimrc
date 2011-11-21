@@ -72,3 +72,11 @@ set softtabstop=4 shiftwidth=4 expandtab
 " Word wrapping, and only wrap on whole words
 set wrap
 set linebreak
+
+" Debugger key binds
+map <F5> :DbgRun<CR>
+map <F6> :DbgStepInto<CR>
+map <F7> :DbgStepOver<CR>
+map <F8> :DbgStepOut<CR>
+map <F9> :DbgDetach<CR>
+map <F4> :DbgToggleBreakpoint<CR>
