@@ -64,3 +64,11 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " MacVim font
 set guifont=Menlo:h14
+
+
+" Tabs are 4 spaces, and soft only
+set softtabstop=4 shiftwidth=4 expandtab
+
+" Word wrapping, and only wrap on whole words
+set wrap
+set linebreak
