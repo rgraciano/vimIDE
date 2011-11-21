@@ -30,17 +30,20 @@ set completeopt=longest,menuone,preview
 
 set ruler
 
+" Change the behavior of the <Enter> key when the popup menu is visible. In that case the Enter key will simply select the highlighted menu item, just as <C-Y> does.
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+" Make <C-N> work the way it normally does; however, when the menu appears, the <Down> key will be simulated. What this accomplishes is it keeps a menu item always highlighted. This way you can keep typing characters to narrow the matches, and the nearest match will be selected so that you can hit Enter at any time to insert it.
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
   \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
+" Simulates <C-X><C-O> to bring up the omni completion menu, then it simulates <C-N><C-P> to remove the longest common text, and finally it simulates <Down> again to keep a match highlighted.
 inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 set tags=~/.vimtags
 
-let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplMapCTabSwitchBufs = -1
 
 " Easy window movement
 nmap <C-J> <C-W>j<C-W>
@@ -49,9 +52,9 @@ nmap <c-h> <c-w>h<c-w>
 nmap <c-l> <c-w>l<c-w>
 
 " Custom bindings to do stuff easily
-nmap <leader>t :Tlist<CR>
-nmap <leader>f :CommandT<CR>
-nmap <leader>b :NERDTreeToggle<CR>
+nmap <leader>c :Tlist<CR>
+nmap <leader>t :CommandT<CR>
+nmap <leader>f :NERDTreeToggle<CR>
 
 
 " Create all swap files in one place
