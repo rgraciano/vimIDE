@@ -73,10 +73,6 @@ set softtabstop=4 shiftwidth=4 expandtab
 set wrap
 set linebreak
 
-" Debugger key binds
-map <F5> :DbgRun<CR>
-map <F6> :DbgStepInto<CR>
-map <F7> :DbgStepOver<CR>
-map <F8> :DbgStepOut<CR>
-map <F9> :DbgDetach<CR>
-map <F4> :DbgToggleBreakpoint<CR>
+" Need to tell the debugger that we are using MiniBufExpl
+let g:debuggerMiniBufExpl = 1
+
