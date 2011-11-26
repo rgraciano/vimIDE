@@ -5,10 +5,6 @@ colorscheme zellner
 " individually in ~/.vim/plugin/
 call pathogen#infect()
 
-" Intuitive backspacing in insert mode
-set backspace=indent,eol,start
-set hidden
-set visualbell
 set history=1000
  
 " File-type highlighting and configuration.
@@ -27,8 +23,6 @@ nmap <silent> <leader>n :silent :nohlsearch<CR>
 
 " Autocomplete settings
 set completeopt=longest,menuone,preview
-
-set ruler
 
 " Change the behavior of the <Enter> key when the popup menu is visible. In that case the Enter key will simply select the highlighted menu item, just as <C-Y> does.
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -50,6 +44,8 @@ nmap <C-J> <C-W>j<C-W>
 nmap <C-K> <C-W>k<C-W>
 nmap <c-h> <c-w>h<c-w>
 nmap <c-l> <c-w>l<c-w>
+nmap <leader>v <c-w>v
+nmap <leader>x <c-w>c
 
 " Custom bindings to do stuff easily
 nmap <leader>c :Tlist<CR>
@@ -72,7 +68,44 @@ set softtabstop=4 shiftwidth=4 expandtab
 " Word wrapping, and only wrap on whole words
 set wrap
 set linebreak
+set textwidth=79
+set formatoptions=qrn1
 
 " Need to tell the debugger that we are using MiniBufExpl
 let g:debuggerMiniBufExpl = 1
 
+"No longer compatible with vi (I only use vim anyway)
+set nocompatible
+
+" Adding a bunch of cool setting to vim
+set encoding=utf-8
+set scrolloff=3
+set autoindent
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=list:longest
+set visualbell
+set cursorline
+set ttyfast
+set ruler
+set backspace=indent,eol,start
+set laststatus=2
+set relativenumber
+set undofile
+
+nnoremap / /\v
+vnoremap / /\v
+
+" Intelligent case handling - search case-sensitive only when mixed case is
+" used in the search string
+set ignorecase
+set smartcase
+
+" Global search by default
+set gdefault
+
+" Move by screen line instead of file line
+nnoremap j gj
+nnoremap k gk
