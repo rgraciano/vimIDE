@@ -387,7 +387,7 @@ class HelpWindow(VimWindow):
     self.write(                                                          \
         '[ Function Keys ]                 |                       \n' + \
         '  <F1>   resize                   | [ Normal Mode ]       \n' + \
-        '  <F2>   step into                |   ,e  eval            \n' + \
+        '  <F2>   step into                |   <F10>  eval            \n' + \
         '  <F3>   step over                |                       \n' + \
         '  <F4>   step out                 |                       \n' + \
         '  <F5>   run                      | [ Command Mode ]      \n' + \
