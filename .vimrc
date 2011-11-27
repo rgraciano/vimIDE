@@ -44,8 +44,8 @@ nmap <C-J> <C-W>j<C-W>
 nmap <C-K> <C-W>k<C-W>
 nmap <c-h> <c-w>h<c-w>
 nmap <c-l> <c-w>l<c-w>
-nmap <leader>v <c-w>v
-nmap <leader>x <c-w>c
+nmap <c-v> <c-w>v
+nmap <c-x> <c-w>c
 
 " Custom bindings to do stuff easily
 nmap <leader>c :Tlist<CR>
@@ -56,6 +56,7 @@ nmap <leader>f :NERDTreeToggle<CR>
 " Create all swap files in one place
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set undodir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 
 " MacVim font
@@ -109,3 +110,27 @@ set gdefault
 " Move by screen line instead of file line
 nnoremap j gj
 nnoremap k gk
+
+" Easier buffer deletion
+nnoremap <c-d> :bd<cr>
+
+" Execute ctags command in the background to regen tagfile on demand
+nnoremap <leader>r :call Tagrefresh('', 0)<cr> 
+
+" Regenerates ctags with ctagsgen.sh in a background process.
+" If a directory is not supplied, then pwd will be used. If suppressOutput is
+" true, then AsyncCommand will be used instead of AsyncShell (so no output
+" comes back to the user)
+function Tagrefresh(dir, suppressOutput) 
+    if empty(a:dir)
+        let gendir = substitute(system('pwd'), "\n", '', '') 
+    else
+        let gendir = a:dir
+    endif
+
+    if a:suppressOutput
+        execute "AsyncCommand(~/.vim/ctagsgen.sh " . gendir . ")"
+    else
+        execute "AsyncShell(~/.vim/ctagsgen.sh " . gendir . ")" 
+    endif
+endfunction
