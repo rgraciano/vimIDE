@@ -13,3 +13,6 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
+[submodule "plugin/AsyncCommand"]
+	path = plugin/AsyncCommand
+	url = git://github.com/pydave/AsyncCommand.git
