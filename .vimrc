@@ -69,7 +69,6 @@ set softtabstop=4 shiftwidth=4 expandtab
 " Word wrapping, and only wrap on whole words
 set wrap
 set linebreak
-set textwidth=79
 set formatoptions=qrn1
 
 " Need to tell the debugger that we are using MiniBufExpl
