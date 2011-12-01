@@ -134,3 +134,9 @@ function Tagrefresh(dir, suppressOutput)
         execute "AsyncShell(~/.vim/ctagsgen.sh " . gendir . ")" 
     endif
 endfunction
+
+
+" Quieter grep, which doesn't open the first file (annoying behavior).
+" Also executes recursively by default, and opens a window with the results
+command! -nargs=+ G execute 'silent grep! -R <args>' | copen 42
+
