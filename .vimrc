@@ -104,7 +104,7 @@ set ignorecase
 set smartcase
 
 " Global search by default
-set gdefault
+" set gdefault
 
 " Move by screen line instead of file line
 nnoremap j gj
