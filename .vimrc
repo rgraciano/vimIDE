@@ -139,3 +139,5 @@ endfunction
 " Also executes recursively by default, and opens a window with the results
 command! -nargs=+ G execute 'silent grep! -R <args>' | copen 42
 
+" Don't echo the filename when creating hard copies (printing)
+set printoptions=header:0
