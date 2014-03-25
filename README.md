@@ -2,9 +2,9 @@
 
 ## What you're looking at
 
-I use vim as an IDE of sorts, as well as my everyday editor for just about everything.
 What you're seeing here is my own vimrc, which has a collection of useful features
-and (in my opinion) must have settings to make life easier.
+and (in my opinion) must have settings to make vim feel more like an IDE. I use productized 
+IDEs for most development, but I'm in vim often.
 
 ## Why these plugins?
 
